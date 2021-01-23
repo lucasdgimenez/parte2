@@ -41,7 +41,19 @@
 		<!--- RESPOSTA 2 ---->
 		<script>
 			console.log('resposta 2');
-			//insira a resposta aqui.
+			let stringDois = 'Texto exercicio dois'
+			let numExDois = 5
+			let arrayDois = []
+			let respDois = ''
+			exDois(stringDois, numExDois)
+			function exDois(texto, vezes) {
+				for (let indexDois = 0; indexDois < vezes ; indexDois++) {
+					arrayDois.push(texto)
+				}
+				console.log(arrayDois)
+				respDois = arrayDois.toString()
+				console.log(respDois)
+			}
 		</script>
 
 		<div class="border"></div>
@@ -107,7 +119,7 @@
 			function exercicioCinco(idade) {
 				console.log(idade >= 18 ? 'Maior de idade' : 'Menor de idade')
 			}
-			//insira a resposta aqui.
+			
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 6 ---->
@@ -134,7 +146,7 @@
 				arrayExercicioSeis.push(obj)
 				console.log(arrayExercicioSeis)
 			}
-			//insira a resposta aqui.
+
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 7 ---->
@@ -160,8 +172,8 @@
 			console.log("2: "+ lastWord)
 			console.log("3: " + pronto.length)
 			console.log("4: "+ typeof lastWord)
-			//insira a resposta aqui.
-		</script>
+
+</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 8 ---->
 		<p>8) Em uma lista de 5 divs:</p>
@@ -182,16 +194,16 @@
 			console.log('resposta 8');
 			const listExOito = document.querySelectorAll('.exercicioOito div')
 			let arrayExOito = Array.from(listExOito)
-			arrayExOito.forEach((item) => {
-				item.setAttribute("dataid", "teste")
+			arrayExOito.forEach((item, index) => {
+				item.setAttribute("data-id", index)
 				console.log(item)
 			})
-			//insira a resposta aqui.
-		</script>
+
+</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 9 ---->
 		<p>9) Dado o seguinte html:</p>
-		<pre>&lt;div class="content"&gt;<br>&nbsp;&nbsp;&lt;ul&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Categoria<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="subcontainer"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul tyle="display: none;"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>Subcategoria&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&lt;/ul&gt;<br>&lt;/div&gt;<br></pre>
+		<pre>&lt;div class="content"&gt;<br>&nbsp;&nbsp;&lt;ul&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Categoria<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="subcontainer"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul style="display: none;"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>Subcategoria&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&lt;/ul&gt;<br>&lt;/div&gt;<br></pre>
 		<p>Faça um bloco javascript que trate o evento de click na palavra "Categoria" para:</p>
 		<ol>
 			<li>exibir a ul da subcategoria;</li>
@@ -200,9 +212,9 @@
 		<!--- RESPOSTA 9 ---->
 		<div class="content" style="margin: 20px;">
 			<ul>
-				<li style="list-style: none; padding:10px 0; background: #eee; width: 180px; text-align: center;">Categoria
+				<li style="list-style: none; padding:10px 0; background: #eee; width: 180px; text-align: center;" onclick="exNove()">Categoria
 					<div class="subcontainer">
-						<ul style="display: none;">
+						<ul class="subcategoria" style="display: none;">
 							<li>Subcategoria</li>
 						</ul>
 					</div>
@@ -211,7 +223,13 @@
 		</div>
 		<script>
 			console.log('resposta 9');
-			//insira a resposta aqui.
+			const content = document.querySelector('.content')
+			const subcontainer = document.querySelector('.subcontainer')
+			function exNove() {
+				document.querySelector('.subcategoria').style.display = "block";
+				content.classList.add("active")
+				subcontainer.classList.add("active")
+			}
 		</script>
 		<div class="border"></div>
 		<!--- PERGUNTA 10 ---->
