@@ -159,7 +159,7 @@
 			console.log("1: "+ pronto)
 			console.log("2: "+ lastWord)
 			console.log("3: " + pronto.length)
-			console.log("4: "+ typeOf(lastWord))
+			console.log("4: "+ typeof lastWord)
 			//insira a resposta aqui.
 		</script>
 		<div class="border"></div>
@@ -170,14 +170,22 @@
 
 		<p>faça uma função para adicionar o atributo 'data-id' em cada uma das divs, com o valor sendo a posição que se encontra a div na lista. Ex.: &lt;div data-id="2"&gt;</p>.
 		<!--- RESPOSTA 8 ---->
-
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+		<div class="exercicioOito">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		
 		<script>
 			console.log('resposta 8');
+			const listExOito = document.querySelectorAll('.exercicioOito div')
+			let arrayExOito = Array.from(listExOito)
+			arrayExOito.forEach((item) => {
+				item.setAttribute("dataid", "teste")
+				console.log(item)
+			})
 			//insira a resposta aqui.
 		</script>
 		<div class="border"></div>
